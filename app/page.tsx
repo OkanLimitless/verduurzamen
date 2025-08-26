@@ -5,6 +5,8 @@ import OfferBanner from "@/components/OfferBanner";
 import TrustBar from "@/components/TrustBar";
 import Steps from "@/components/Steps";
 import FAQ from "@/components/FAQ";
+import Section from "@/components/ui/Section";
+import Card from "@/components/ui/Card";
 
 export default function Home() {
   return (
@@ -36,34 +38,35 @@ export default function Home() {
 
       <TrustBar />
 
-      <section className="mt-6 grid gap-3">
-        <div className="rounded-xl border border-neutral-200 p-4 bg-white">
-          <p className="font-semibold">Gratis en vrijblijvende offerte</p>
-          <p className="text-sm text-neutral-600">Ontvang snel een prijsindicatie, afgestemd op jouw situatie.</p>
+      <Section title="Waarom kiezen voor ons?">
+        <div className="grid gap-3">
+          {[
+            "Gratis en vrijblijvende offerte",
+            "Scherpe prijs en snelle planning (2–4 weken)",
+            "Gecertificeerde vakmensen en fabrieksgarantie",
+          ].map((b) => (
+            <Card key={b} className="p-4">
+              <p className="text-sm text-neutral-800">{b}</p>
+            </Card>
+          ))}
         </div>
-        <div className="rounded-xl border border-neutral-200 p-4 bg-white">
-          <p className="font-semibold">Snelle start</p>
-          <p className="text-sm text-neutral-600">Vaak binnen 2–4 weken ingepland.</p>
-        </div>
-        <div className="rounded-xl border border-neutral-200 p-4 bg-white">
-          <p className="font-semibold">Gecertificeerde vakmensen</p>
-          <p className="text-sm text-neutral-600">Met fabrieksgarantie en nette afwerking.</p>
-        </div>
-      </section>
+      </Section>
 
-      <Steps />
-      <FAQ />
+      <Section title="Zo werkt het">
+        <Steps />
+      </Section>
 
-      <section className="mt-8 mb-24">
-        <h3 className="text-lg font-bold mb-3">Populaire categorieën</h3>
+      <Section title="Veelgestelde vragen">
+        <FAQ />
+      </Section>
+
+      <Section title="Populaire categorieën">
         <ul className="grid grid-cols-2 gap-3">
           {["Airco","Dakisolatie","Zonnepanelen","Kozijnen","Traprenovatie","Vochtbestrijding"].map((label) => (
-            <li key={label} className="rounded-xl border border-neutral-200 p-4 text-center text-sm font-medium bg-white">
-              {label}
-            </li>
+            <Card key={label} className="p-4 text-center text-sm font-medium">{label}</Card>
           ))}
         </ul>
-      </section>
+      </Section>
 
       <StickyCallCTA phoneTel={PHONE_TEL} phoneDisplay={PHONE_NUMBER} />
     </div>

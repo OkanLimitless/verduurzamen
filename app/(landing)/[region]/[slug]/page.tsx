@@ -4,6 +4,8 @@ import OfferBanner from "@/components/OfferBanner";
 import TrustBar from "@/components/TrustBar";
 import Steps from "@/components/Steps";
 import FAQ from "@/components/FAQ";
+import Section from "@/components/ui/Section";
+import Card from "@/components/ui/Card";
 import type { Metadata } from "next";
 
 interface PageProps {
@@ -62,20 +64,27 @@ export default async function LandingPage({ params }: PageProps) {
 
       <TrustBar />
 
-      <section className="mt-6 grid gap-3">
-        {(page.bullets || [
-          "Gratis en vrijblijvende offerte",
-          "Snelle planning, vaak binnen 2–4 weken",
-          "Gecertificeerde vakmensen en fabrieksgarantie",
-        ]).map((b) => (
-          <div key={b} className="rounded-xl border border-neutral-200 p-4">
-            <p className="text-sm text-neutral-800">{b}</p>
-          </div>
-        ))}
-      </section>
+      <Section title="Waarom kiezen voor ons?">
+        <div className="grid gap-3">
+          {(page.bullets || [
+            "Gratis en vrijblijvende offerte",
+            "Scherpe prijs en snelle planning (2–4 weken)",
+            "Gecertificeerde vakmensen en fabrieksgarantie",
+          ]).map((b) => (
+            <Card key={b} className="p-4">
+              <p className="text-sm text-neutral-800">{b}</p>
+            </Card>
+          ))}
+        </div>
+      </Section>
 
-      <Steps />
-      <FAQ />
+      <Section title="Zo werkt het">
+        <Steps />
+      </Section>
+
+      <Section title="Veelgestelde vragen">
+        <FAQ />
+      </Section>
 
       <div className="h-24" />
       <StickyCallCTA phoneTel={PHONE_TEL} phoneDisplay={PHONE_NUMBER} region={region} slug={slug} />
