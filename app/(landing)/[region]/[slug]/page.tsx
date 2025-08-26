@@ -1,5 +1,9 @@
 import { findPage, getAllStaticParams, PHONE_NUMBER, PHONE_TEL, type Region } from "@/lib/catalog";
 import StickyCallCTA from "@/components/StickyCallCTA";
+import OfferBanner from "@/components/OfferBanner";
+import TrustBar from "@/components/TrustBar";
+import Steps from "@/components/Steps";
+import FAQ from "@/components/FAQ";
 import type { Metadata } from "next";
 
 interface PageProps {
@@ -43,29 +47,37 @@ export default async function LandingPage({ params }: PageProps) {
       <header className="py-4">
         <p className="text-xs uppercase tracking-wide text-neutral-500">{page.category || "Verduurzaam Nederland"}</p>
         <h1 className="text-2xl font-extrabold">{page.title}</h1>
-        {page.offer && <p className="mt-1 text-green-700 font-medium">{page.offer}</p>}
       </header>
 
-      <section className="grid gap-3">
-        {(page.bullets || []).map((b) => (
+      <OfferBanner
+        title={page.offer || "Vandaag aanvragen = morgen gebeld"}
+        subtitle="Direct richtprijs en planning aan de telefoon."
+        highlight="Beperkte Actie: tot 25% voordeel op voorraad"
+        phoneTel={PHONE_TEL}
+        phoneDisplay={PHONE_NUMBER}
+        disclaimer="Actie op basis van beschikbaarheid/voorraad. Voorwaarden op aanvraag."
+        region={region}
+        slug={slug}
+      />
+
+      <TrustBar />
+
+      <section className="mt-6 grid gap-3">
+        {(page.bullets || [
+          "Gratis en vrijblijvende offerte",
+          "Snelle planning, vaak binnen 2–4 weken",
+          "Gecertificeerde vakmensen en fabrieksgarantie",
+        ]).map((b) => (
           <div key={b} className="rounded-xl border border-neutral-200 p-4">
             <p className="text-sm text-neutral-800">{b}</p>
           </div>
         ))}
-        {page.bullets?.length === 0 && (
-          <div className="rounded-xl border border-neutral-200 p-4">
-            <p className="text-sm text-neutral-800">Gratis en vrijblijvende offerte</p>
-          </div>
-        )}
       </section>
 
-      <section className="mt-6 mb-24">
-        <div className="rounded-xl bg-neutral-50 p-4 border border-neutral-200">
-          <p className="text-sm text-neutral-700">Bel direct met een specialist:</p>
-          <p className="text-lg font-bold mt-1">{PHONE_NUMBER}</p>
-        </div>
-      </section>
+      <Steps />
+      <FAQ />
 
+      <div className="h-24" />
       <StickyCallCTA phoneTel={PHONE_TEL} phoneDisplay={PHONE_NUMBER} region={region} slug={slug} />
     </div>
   );
