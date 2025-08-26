@@ -5,6 +5,10 @@ export default function sitemap(): MetadataRoute.Sitemap {
   const baseUrl = "https://www.verduurzaam-nederland.nl";
   const routes: MetadataRoute.Sitemap = [
     { url: `${baseUrl}/`, lastModified: new Date(), changeFrequency: "weekly", priority: 0.7 },
+    { url: `${baseUrl}/financiering`, lastModified: new Date(), changeFrequency: "weekly", priority: 0.7 },
+    { url: `${baseUrl}/subsidie`, lastModified: new Date(), changeFrequency: "weekly", priority: 0.7 },
+    { url: `${baseUrl}/snel`, lastModified: new Date(), changeFrequency: "weekly", priority: 0.7 },
+    { url: `${baseUrl}/premium`, lastModified: new Date(), changeFrequency: "weekly", priority: 0.7 },
   ];
 
   const pages = getAllStaticParams();
@@ -13,7 +17,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
       url: `${baseUrl}/${region}/${slug}`,
       lastModified: new Date(),
       changeFrequency: "weekly",
-      priority: 0.7,
+      priority: 0.6,
     });
   }
 
