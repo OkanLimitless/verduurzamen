@@ -52,7 +52,7 @@ export default function ThuisbatterijLander() {
         <div className="flex items-center justify-center"><CallCTA tel={TEL} label="📞 Bel nu" /></div>
       </section>
 
-      <StickyCallBar tel={TEL} onOpenCallback={() => setOpen(true)} />
+      <StickyCallBar tel={TEL} />
       <CallbackSheet open={open} onClose={() => setOpen(false)} />
     </div>
   );

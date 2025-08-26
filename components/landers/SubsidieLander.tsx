@@ -61,7 +61,7 @@ export default function SubsidieLander() {
         </Section>
       </main>
       <footer className="mt-12 mb-28 text-sm text-[var(--muted)]">Profiteer van subsidievoordeel — <a href={`tel:${TEL}`} className="underline">Bel nu</a></footer>
-      <StickyCallBar tel={TEL} onOpenCallback={() => setOpen(true)} />
+      <StickyCallBar tel={TEL} />
       <CallbackSheet open={open} onClose={() => setOpen(false)} />
     </div>
   );

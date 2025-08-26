@@ -30,15 +30,14 @@ export default function Hero({
         <p className="mt-3 text-white/90 md:text-lg max-w-2xl">{subtitle}</p>
         <div className="mt-5 flex items-center gap-4">
           <CallCTA tel={tel} label="📞 Bel nu" />
-          {showSecondary && onOpenCallback && (
-            <motion.button whileTap={{ scale: 0.98 }} onClick={onOpenCallback} className="rounded-xl bg-white/15 hover:bg-white/25 text-white font-semibold px-5 py-3 min-h-[44px]">
-              Laat mij terugbellen
-            </motion.button>
-          )}
         </div>
-        <div className="mt-6 grid grid-cols-3 gap-2 text-xs md:text-sm">
-          {["Bekend van", "Partner van", "Gecertificeerd"].map((t) => (
-            <div key={t} className="rounded-lg bg-white/10 text-white/90 text-center px-3 py-2">{t}</div>
+        <div className="mt-6 flex flex-wrap items-center gap-2 text-xs md:text-sm">
+          {[
+            "✔ Gecertificeerde installateurs",
+            "✔ Landelijke dekking",
+            "✔ Inclusief subsidie-advies",
+          ].map((t) => (
+            <span key={t} className="rounded-full bg-white/15 px-3 py-1 text-white/95 font-medium">{t}</span>
           ))}
         </div>
       </div>

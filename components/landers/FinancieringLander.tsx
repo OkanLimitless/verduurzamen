@@ -87,7 +87,7 @@ export default function FinancieringLander() {
         </div>
       </footer>
 
-      <StickyCallBar tel={TEL} onOpenCallback={() => setOpen(true)} />
+      <StickyCallBar tel={TEL} />
       <CallbackSheet open={open} onClose={() => setOpen(false)} />
     </div>
   );

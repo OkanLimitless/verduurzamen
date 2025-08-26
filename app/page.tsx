@@ -183,7 +183,7 @@ export default function Home() {
         </div>
       </footer>
 
-      <StickyCallBar tel={TEL} onOpenCallback={() => setOpen(true)} />
+      <StickyCallBar tel={TEL} />
       <CallbackSheet open={open} onClose={() => setOpen(false)} />
     </div>
   );

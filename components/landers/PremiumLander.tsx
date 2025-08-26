@@ -61,7 +61,7 @@ export default function PremiumLander() {
         </Section>
       </main>
       <footer className="mt-12 mb-28 text-sm text-[var(--muted)]"><div className="grid gap-1"><p className="flex items-center gap-2"><Star className="size-4 text-yellow-500" aria-hidden /> Kies voor zekerheid: <a href={`tel:${TEL}`} className="underline">{TEL}</a></p></div></footer>
-      <StickyCallBar tel={TEL} onOpenCallback={() => setOpen(true)} />
+      <StickyCallBar tel={TEL} />
       <CallbackSheet open={open} onClose={() => setOpen(false)} />
     </div>
   );
