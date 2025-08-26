@@ -2,21 +2,27 @@
 
 import { motion } from "framer-motion";
 import CallCTA from "@/components/CallCTA";
+import Image from "next/image";
 
 export default function Hero({
   title,
   subtitle,
   tel,
   onOpenCallback,
+  imageUrl,
 }: {
   title: string;
   subtitle: string;
   tel: string;
   onOpenCallback: () => void;
+  imageUrl?: string;
 }) {
   return (
-    <section className="relative overflow-hidden rounded-3xl p-6 md:p-10 bg-gradient-to-br from-[var(--brand)] to-[var(--accent)] text-white shadow-lg">
-      <div className="absolute inset-0 opacity-20 bg-[radial-gradient(ellipse_at_top_right,white,transparent_60%)]" aria-hidden />
+    <section className="relative overflow-hidden rounded-3xl p-6 md:p-10 text-white shadow-lg">
+      {imageUrl && (
+        <Image src={imageUrl} alt="Hero" fill priority sizes="100vw" className="object-cover absolute inset-0" />
+      )}
+      <div className="absolute inset-0 bg-gradient-to-br from-[var(--brand)]/90 to-[var(--accent)]/80" aria-hidden />
       <div className="relative">
         <h1 className="text-3xl md:text-5xl font-extrabold leading-tight">{title}</h1>
         <p className="mt-3 text-white/90 md:text-lg max-w-2xl">{subtitle}</p>
