@@ -10,12 +10,14 @@ export default function Hero({
   tel,
   onOpenCallback,
   imageUrl,
+  showSecondary = false,
 }: {
   title: string;
   subtitle: string;
   tel: string;
-  onOpenCallback: () => void;
+  onOpenCallback?: () => void;
   imageUrl?: string;
+  showSecondary?: boolean;
 }) {
   return (
     <section className="relative overflow-hidden rounded-3xl p-6 md:p-10 text-white shadow-lg">
@@ -28,9 +30,11 @@ export default function Hero({
         <p className="mt-3 text-white/90 md:text-lg max-w-2xl">{subtitle}</p>
         <div className="mt-5 flex items-center gap-4">
           <CallCTA tel={tel} label="📞 Bel nu" />
-          <motion.button whileTap={{ scale: 0.98 }} onClick={onOpenCallback} className="rounded-xl bg-white/15 hover:bg-white/25 text-white font-semibold px-5 py-3 min-h-[44px]">
-            Laat mij terugbellen
-          </motion.button>
+          {showSecondary && onOpenCallback && (
+            <motion.button whileTap={{ scale: 0.98 }} onClick={onOpenCallback} className="rounded-xl bg-white/15 hover:bg-white/25 text-white font-semibold px-5 py-3 min-h-[44px]">
+              Laat mij terugbellen
+            </motion.button>
+          )}
         </div>
         <div className="mt-6 grid grid-cols-3 gap-2 text-xs md:text-sm">
           {["Bekend van", "Partner van", "Gecertificeerd"].map((t) => (

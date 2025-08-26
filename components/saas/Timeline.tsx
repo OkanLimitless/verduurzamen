@@ -2,12 +2,12 @@ import { ClipboardCheck, FileCheck, Wrench } from "lucide-react";
 
 export default function Timeline() {
   const items = [
-    { icon: <ClipboardCheck className="size-5" aria-hidden />, t: "Advies & subsidiecheck", d: "Gratis en binnen 24 uur." },
-    { icon: <FileCheck className="size-5" aria-hidden />, t: "Richtprijs & plan", d: "Helder voorstel en planning." },
-    { icon: <Wrench className="size-5" aria-hidden />, t: "Installatie", d: "Erkende monteurs, netjes opgeleverd." },
+    { icon: <ClipboardCheck className="size-5" aria-hidden />, t: "Gratis advies & subsidiecheck", d: "Binnen 24 uur.", },
+    { icon: <FileCheck className="size-5" aria-hidden />, t: "Richtprijs & plan binnen 24 uur", d: "Helder voorstel en planning.", },
+    { icon: <Wrench className="size-5" aria-hidden />, t: "Installatie door erkende monteurs", d: "Netjes opgeleverd.", },
   ];
   return (
-    <section className="mt-8">
+    <section className="mt-8 bg-slate-50 rounded-3xl p-5">
       <h2 className="text-xl font-bold">Hoe werkt het?</h2>
       <div className="mt-4 relative pl-6">
         <div className="absolute left-2 top-0 bottom-0 w-px bg-gradient-to-b from-[var(--brand)] to-[var(--accent)]" aria-hidden />

@@ -12,6 +12,7 @@ import CallCTA from "@/components/CallCTA";
 import StickyCallBar from "@/components/StickyCallBar";
 import CallbackSheet from "@/components/CallbackSheet";
 import SchemaLocalBusiness from "@/components/SchemaLocalBusiness";
+import Image from "next/image";
 
 const TEL = "+3185XXXXXXX";
 
@@ -26,7 +27,6 @@ export default function ThuisbatterijLander() {
           title="Thuisbatterij — maximale onafhankelijkheid en lagere energierekening."
           subtitle="Sla je zonne-energie op, gebruik stroom op piekmomenten en word minder afhankelijk van energieleveranciers."
           tel={TEL}
-          onOpenCallback={() => setOpen(true)}
           imageUrl="/hero.svg"
         />
       </div>
@@ -37,11 +37,11 @@ export default function ThuisbatterijLander() {
       <Timeline />
 
       <section className="mt-8 grid gap-3">
-        <div className="rounded-3xl overflow-hidden shadow-lg">
-          <img src="/hero.svg" alt="Tevreden klant met thuisbatterij" className="w-full h-48 object-cover" />
+        <div className="rounded-3xl overflow-hidden shadow-lg relative h-48">
+          <Image src="/hero.svg" alt="Tevreden klant met thuisbatterij" fill sizes="100vw" className="object-cover" />
         </div>
-        <div className="rounded-3xl overflow-hidden shadow-lg">
-          <img src="/hero.svg" alt="Monteurs aan het werk" className="w-full h-48 object-cover" />
+        <div className="rounded-3xl overflow-hidden shadow-lg relative h-48">
+          <Image src="/hero.svg" alt="Monteurs aan het werk" fill sizes="100vw" className="object-cover" />
         </div>
       </section>
 
