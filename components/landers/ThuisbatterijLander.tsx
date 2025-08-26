@@ -8,7 +8,6 @@ import Comparison from "@/components/saas/Comparison";
 import Timeline from "@/components/saas/Timeline";
 import Testimonials from "@/components/saas/Testimonials";
 import FinancingBanner from "@/components/saas/FinancingBanner";
-import CallCTA from "@/components/CallCTA";
 import StickyCallBar from "@/components/StickyCallBar";
 import CallbackSheet from "@/components/CallbackSheet";
 import SchemaLocalBusiness from "@/components/SchemaLocalBusiness";
@@ -27,7 +26,6 @@ export default function ThuisbatterijLander() {
           title="Thuisbatterij — maximale onafhankelijkheid en lagere energierekening."
           subtitle="Sla je zonne-energie op, gebruik stroom op piekmomenten en word minder afhankelijk van energieleveranciers."
           tel={TEL}
-          imageUrl="/hero.svg"
         />
       </div>
 
@@ -40,17 +38,10 @@ export default function ThuisbatterijLander() {
         <div className="rounded-3xl overflow-hidden shadow-lg relative h-48">
           <Image src="/hero.svg" alt="Tevreden klant met thuisbatterij" fill sizes="100vw" className="object-cover" />
         </div>
-        <div className="rounded-3xl overflow-hidden shadow-lg relative h-48">
-          <Image src="/hero.svg" alt="Monteurs aan het werk" fill sizes="100vw" className="object-cover" />
-        </div>
       </section>
 
       <Testimonials />
       <FinancingBanner tel={TEL} />
-
-      <section className="mt-8">
-        <div className="flex items-center justify-center"><CallCTA tel={TEL} label="📞 Bel nu" /></div>
-      </section>
 
       <StickyCallBar tel={TEL} />
       <CallbackSheet open={open} onClose={() => setOpen(false)} />
