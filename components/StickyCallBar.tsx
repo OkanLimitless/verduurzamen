@@ -1,7 +1,6 @@
 "use client";
 
 import { useEffect } from "react";
-import { Phone } from "lucide-react";
 
 export default function StickyCallBar({ tel, onOpenCallback }: { tel: string; onOpenCallback: () => void }) {
   useEffect(() => { window.dataLayer = window.dataLayer || []; }, []);
@@ -15,8 +14,7 @@ export default function StickyCallBar({ tel, onOpenCallback }: { tel: string; on
           onClick={() => { try { window.dataLayer.push({ event: "cta_click", cta: "call" }); } catch {} }}
           className="inline-flex items-center gap-2 rounded-xl bg-[var(--brand)] hover:bg-[var(--brand-600)] active:bg-[var(--brand-700)] text-white font-semibold px-5 py-3 min-h-[44px]"
         >
-          <Phone className="size-5" aria-hidden />
-          Bel direct
+          📞 Bel direct
         </a>
         <button
           onClick={() => { try { window.dataLayer.push({ event: "cta_view", cta: "callback_form" }); } catch {} ; onOpenCallback(); }}
